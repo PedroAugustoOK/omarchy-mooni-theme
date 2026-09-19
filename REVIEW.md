@@ -44,6 +44,5 @@ extensões e opções locais podem mudar o resultado visual.
 
 As referências Flexoki Light e Everforest acima foram usadas somente para
 comparar estrutura e contrato do Omarchy; nenhuma captura ou paleta foi
-reutilizada. As prévias atuais são capturas reais deste tema, conforme
-[PREVIEWS.md](PREVIEWS.md). A tela de bloqueio da sessão continua distinta do
-desbloqueio de disco do Plymouth.
+reutilizada. A captura do desktop é real e a prévia de desbloqueio reproduz o
+Plymouth oficial, conforme [PREVIEWS.md](PREVIEWS.md).

@@ -12,6 +12,7 @@ palette and rendered at 3840×2160.
 
 ## Prévias
 
-`preview.png` e `preview-unlock.png` são capturas reais deste tema aplicado
-no Omarchy. Não foram adaptadas, recoloridas ou geradas por IA. O procedimento
-está documentado em [PREVIEWS.md](PREVIEWS.md).
+`preview.png` é uma captura real deste tema aplicado no Omarchy.
+`preview-unlock.png` é uma composição determinística da interface Plymouth,
+feita com os assets oficiais e o símbolo do tema. Nenhuma das duas foi gerada
+por IA. O procedimento está documentado em [PREVIEWS.md](PREVIEWS.md).

@@ -27,7 +27,8 @@ omarchy theme bg next
 - Complete `shell.toml` coverage for the bar, menus, notifications, polkit,
   lock screen, and wallpaper picker.
 - Yaru Yellow icons and a btop theme.
-- Four 3840×2160 wallpapers plus real desktop and session-lock captures.
+- Four 3840×2160 wallpapers, a real desktop capture, and a faithful Plymouth
+  disk-unlock preview.
 - Optional, palette-generated integrations for bat, Cava, git-delta,
   Fastfetch, fzf/Fish, Lazygit, Steam, Superfile, Vencord, Yazi, and Zed.
 
@@ -51,7 +52,7 @@ python3 scripts/generate-integrations.py
 | `01-mooni-feast.png` | Yellow-toned dinner scene |
 | `02-mooni-pumpkin.png` | Pumpkin landscape |
 | `03-mooni-garden.png` | Sunlit open garden |
-| `04-omarchy-wordmark.png` | Official wordmark on a warm yellow gradient |
+| `04-omarchy-wordmark.png` | Large official wordmark on a solid ivory background |
 
 See [ATTRIBUTIONS.md](ATTRIBUTIONS.md) for asset notes.
 

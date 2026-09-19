@@ -30,7 +30,7 @@ omarchy theme bg next
 - Ícones Yaru Yellow.
 - Tema do btop.
 - Quatro wallpapers em 3840×2160.
-- Capturas reais do desktop e da tela de bloqueio.
+- Captura real do desktop e prévia fiel do desbloqueio de disco Plymouth.
 - Integrações opcionais para bat, Cava, git-delta, Fastfetch, fzf, Lazygit,
   Steam, Superfile, Vencord, Yazi e Zed.
 
@@ -38,12 +38,12 @@ As integrações adicionais e suas instruções estão em
 [INTEGRATIONS.md](INTEGRATIONS.md). O núcleo do tema fica na raiz; os extras
 ficam isolados em `integrations/` e são gerados a partir de `colors.toml`.
 
-## Tela de bloqueio
+## Desbloqueio de disco
 
-![Prévia da tela de bloqueio Mooni](preview-unlock.png)
+![Prévia do desbloqueio de disco Mooni](preview-unlock.png)
 
-`preview-unlock.png` foi capturado pelo modo seguro de prévia do bloqueio do
-Omarchy. O desbloqueio do disco (Plymouth) é uma interface distinta.
+`preview-unlock.png` é renderizado com o símbolo `unlock.png`, as cores do tema
+e a geometria oficial do Plymouth usada pelo Omarchy.
 
 ## Wallpapers
 
@@ -52,7 +52,7 @@ Omarchy. O desbloqueio do disco (Plymouth) é uma interface distinta.
 | `01-mooni-feast.png` | Jantar em tons de amarelo | 
 | `02-mooni-pumpkin.png` | Paisagem com abóboras | 
 | `03-mooni-garden.png` | Jardim aberto e ensolarado | 
-| `04-omarchy-wordmark.png` | Wordmark oficial em fundo dourado | 
+| `04-omarchy-wordmark.png` | Wordmark oficial grande em fundo marfim sólido |
 
 As notas sobre os assets estão em [ATTRIBUTIONS.md](ATTRIBUTIONS.md).
 
@@ -84,6 +84,7 @@ do parser e do servidor de linguagem, não apenas da paleta.
 ~~~bash
 python3 scripts/generate-code-theme.py
 python3 scripts/generate-code-theme.py --check
+sh scripts/render-assets.sh
 python3 scripts/validate-theme.py
 ~~~
 
