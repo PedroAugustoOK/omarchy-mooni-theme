@@ -43,8 +43,8 @@ Ele mantém keywords, funções, tipos, strings, números, comentários e diagn�
 com os mesmos papéis em todos os editores. Os arquivos de integração são gerados por
 `scripts/generate-code-theme.py`; não edite os arquivos gerados diretamente.
 
-Para forçar o recarregamento do tema gerado do VS Code após uma troca de tema,
-instale o hook opcional:
+Para manter o tema gerado do VS Code sincronizado sem reiniciar o editor nem
+alternar temporariamente para outro tema, instale o hook opcional:
 
 ~~~bash
 omarchy hook install theme-set scripts/refresh-vscode-generated.hook

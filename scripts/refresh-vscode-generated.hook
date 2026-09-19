@@ -1,23 +1,122 @@
 #!/bin/bash
 
 # Optional Omarchy hook for generated color themes.
-# VS Code caches the active theme label, so refresh it after a theme switch.
+#
+# VS Code-family editors cache a loaded color theme by extension/version. The
+# stock Omarchy helper currently recreates the generated extension with the
+# same version and a symlink into current/theme, so the active "Omarchy" theme
+# can remain stale. Keep the selected label unchanged and make the extension
+# content/version change only when the palette changes. This follows the
+# upstream Omarchy fix and avoids the visible temporary-theme flash.
 
-refresh_settings() {
-  local settings="$1"
-  [[ -f $settings ]] || return 0
-  grep -q '"workbench.colorTheme"[[:space:]]*:[[:space:]]*"Omarchy"' "$settings" || return 0
+GENERATED_THEME="$HOME/.local/state/omarchy/current/theme/vscode-theme.json"
+GENERATED_EXTENSION_NAME="omarchy-theme"
+GENERATED_EXTENSION_ID="local.$GENERATED_EXTENSION_NAME"
 
-  local temporary_theme="Default Light+"
-  if [[ $(jq -r '.type // "light"' "$HOME/.local/state/omarchy/current/theme/vscode-theme.json" 2>/dev/null) == "dark" ]]; then
-    temporary_theme="Default Dark Modern"
+[[ -f $GENERATED_THEME ]] || exit 0
+
+register_generated_extension() {
+  local ext_dir="$1"
+  local ext_base extensions_file obsolete_file relative tmp
+
+  ext_base=$(dirname "$ext_dir")
+  extensions_file="$ext_base/extensions.json"
+  obsolete_file="$ext_base/.obsolete"
+  relative=$(basename "$ext_dir")
+
+  if [[ -f $obsolete_file ]]; then
+    tmp=$(mktemp)
+    if jq --arg key "$GENERATED_EXTENSION_ID-$GENERATED_EXTENSION_VERSION" \
+      'del(.[$key])' "$obsolete_file" >"$tmp"; then
+      mv "$tmp" "$obsolete_file"
+      [[ $(jq 'length' "$obsolete_file") == "0" ]] && rm -f "$obsolete_file"
+    else
+      rm -f "$tmp"
+    fi
   fi
 
-  sed -i -E "s/(\"workbench\\.colorTheme\"[[:space:]]*:[[:space:]]*\")[^\"]*(\")/\\1${temporary_theme}\\2/" "$settings"
-  sleep 0.15
-  sed -i -E 's/("workbench\.colorTheme"[[:space:]]*:[[:space:]]*")[^"]*(")/\1Omarchy\2/' "$settings"
+  [[ -f $extensions_file ]] || printf '[]\n' >"$extensions_file"
+
+  tmp=$(mktemp)
+  if jq \
+    --arg id "$GENERATED_EXTENSION_ID" \
+    --arg version "$GENERATED_EXTENSION_VERSION" \
+    --arg fs_path "$ext_dir" \
+    --arg external "file://$ext_dir" \
+    --arg relative "$relative" \
+    'map(select(.identifier.id != $id)) + [{
+      identifier: { id: $id },
+      version: $version,
+      location: {
+        "$mid": 1,
+        fsPath: $fs_path,
+        external: $external,
+        path: $fs_path,
+        scheme: "file"
+      },
+      relativeLocation: $relative
+    }]' \
+    "$extensions_file" >"$tmp"; then
+    mv "$tmp" "$extensions_file"
+  else
+    rm -f "$tmp"
+  fi
 }
 
-refresh_settings "$HOME/.config/Code/User/settings.json"
-refresh_settings "$HOME/.config/VSCodium/User/settings.json"
-refresh_settings "$HOME/.config/Cursor/User/settings.json"
+refresh_generated_extension() {
+  local ext_base="$1"
+  local ext_dir="$ext_base/$GENERATED_EXTENSION_NAME"
+  local theme_type ui_theme
+
+  [[ -d $ext_dir ]] || return 0
+
+  theme_type=$(jq -r '.type // "dark"' "$GENERATED_THEME" 2>/dev/null)
+  if [[ $theme_type == "light" ]]; then
+    ui_theme="vs"
+  else
+    ui_theme="vs-dark"
+  fi
+
+  # A content-derived version invalidates VS Code's registry only when the
+  # palette changes. A real file plus _watch makes updates reliable even when
+  # current/theme is atomically replaced by omarchy-theme-set.
+  GENERATED_EXTENSION_VERSION="1.0.$(cksum "$GENERATED_THEME" | awk '{print $1}')"
+  mkdir -p "$ext_dir/themes"
+  rm -f "$ext_dir/themes/omarchy-color-theme.json"
+  cat "$GENERATED_THEME" >"$ext_dir/themes/omarchy-color-theme.json"
+
+  cat >"$ext_dir/package.json" <<EOF
+{
+    "name": "$GENERATED_EXTENSION_NAME",
+    "displayName": "Omarchy",
+    "description": "Omarchy color theme",
+    "publisher": "local",
+    "version": "$GENERATED_EXTENSION_VERSION",
+    "engines": { "vscode": "^1.70.0" },
+    "categories": ["Themes"],
+    "contributes": {
+        "themes": [{
+            "label": "Omarchy",
+            "uiTheme": "$ui_theme",
+            "path": "./themes/omarchy-color-theme.json",
+            "_watch": true
+        }]
+    }
+}
+EOF
+
+  register_generated_extension "$ext_dir"
+}
+
+refresh_if_selected() {
+  local settings="$1"
+  local ext_base="$2"
+
+  [[ -f $settings ]] || return 0
+  grep -q '"workbench.colorTheme"[[:space:]]*:[[:space:]]*"Omarchy"' "$settings" || return 0
+  refresh_generated_extension "$ext_base"
+}
+
+refresh_if_selected "$HOME/.config/Code/User/settings.json" "$HOME/.vscode/extensions"
+refresh_if_selected "$HOME/.config/VSCodium/User/settings.json" "$HOME/.vscode-oss/extensions"
+refresh_if_selected "$HOME/.config/Cursor/User/settings.json" "$HOME/.cursor/extensions"
