@@ -30,7 +30,7 @@ omarchy theme bg next
 - Ícones Yaru Yellow.
 - Tema do btop.
 - Quatro wallpapers em 3840×2160.
-- Prévias ilustrativas de cores do desktop e do desbloqueio.
+- Capturas reais do desktop e da tela de bloqueio.
 - Integrações opcionais para bat, Cava, git-delta, Fastfetch, fzf, Lazygit,
   Steam, Superfile, Vencord, Yazi e Zed.
 
@@ -42,8 +42,8 @@ ficam isolados em `integrations/` e são gerados a partir de `colors.toml`.
 
 ![Prévia da tela de bloqueio Mooni](preview-unlock.png)
 
-A imagem de desbloqueio é ilustrativa; não é uma captura da sessão atual.
-O desbloqueio do disco (Plymouth) e o bloqueio da sessão são interfaces distintas.
+`preview-unlock.png` foi capturado pelo modo seguro de prévia do bloqueio do
+Omarchy. O desbloqueio do disco (Plymouth) é uma interface distinta.
 
 ## Wallpapers
 

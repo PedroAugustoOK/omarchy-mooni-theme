@@ -12,8 +12,6 @@ palette and rendered at 3840×2160.
 
 ## Prévias
 
-As prévias ilustrativas existentes foram adaptadas/recoloridas a partir de
-referências visuais do [Omarchy](https://github.com/omacom/omarchy/tree/quattro/themes).
-Não representam capturas atuais da sessão. Consulte também a
-[licença do projeto de origem](https://github.com/omacom/omarchy/blob/quattro/LICENSE)
-e as limitações documentadas em [REVIEW.md](REVIEW.md).
+`preview.png` e `preview-unlock.png` são capturas reais deste tema aplicado
+no Omarchy. Não foram adaptadas, recoloridas ou geradas por IA. O procedimento
+está documentado em [PREVIEWS.md](PREVIEWS.md).

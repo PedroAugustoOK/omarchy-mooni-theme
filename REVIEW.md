@@ -42,6 +42,8 @@ Neovim continua usando os templates do sistema, portanto não prometemos
 equivalência exata de tokens com os outros editores. Transparência, parser,
 extensões e opções locais podem mudar o resultado visual.
 
-As prévias existentes são ilustrativas/recoloridas; não são evidência de uma
-captura atual. A prévia de desbloqueio não deve ser confundida com a tela de
-bloqueio da sessão. Nenhuma imagem foi alterada nesta revisão.
+As referências Flexoki Light e Everforest acima foram usadas somente para
+comparar estrutura e contrato do Omarchy; nenhuma captura ou paleta foi
+reutilizada. As prévias atuais são capturas reais deste tema, conforme
+[PREVIEWS.md](PREVIEWS.md). A tela de bloqueio da sessão continua distinta do
+desbloqueio de disco do Plymouth.

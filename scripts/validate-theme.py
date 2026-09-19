@@ -15,6 +15,7 @@ REQUIRED = {
     "ATTRIBUTIONS.md",
     "INTEGRATIONS.md",
     "LICENSE",
+    "PREVIEWS.md",
     "README.md",
     "btop.theme",
     "colors.toml",
