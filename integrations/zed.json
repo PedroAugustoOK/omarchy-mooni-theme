@@ -27,11 +27,11 @@
         "terminal.foreground": "#302713",
         "terminal.ansi.black": "#FFF9E8",
         "terminal.ansi.red": "#AF5860",
-        "terminal.ansi.green": "#5B7B4C",
-        "terminal.ansi.yellow": "#A46B00",
-        "terminal.ansi.blue": "#466F91",
+        "terminal.ansi.green": "#3F713A",
+        "terminal.ansi.yellow": "#7A5000",
+        "terminal.ansi.blue": "#185A8A",
         "terminal.ansi.magenta": "#80608D",
-        "terminal.ansi.cyan": "#487D7A",
+        "terminal.ansi.cyan": "#176C68",
         "terminal.ansi.white": "#7D6D48",
         "terminal.ansi.bright_black": "#665A3E",
         "terminal.ansi.bright_red": "#C86F76",
@@ -43,11 +43,11 @@
         "terminal.ansi.bright_white": "#1E180B",
         "syntax.comment": "#665A3E",
         "syntax.keyword": "#8A5A00",
-        "syntax.function": "#466F91",
-        "syntax.string": "#5B7B4C",
-        "syntax.number": "#B56822",
-        "syntax.type": "#A46B00",
-        "syntax.operator": "#487D7A"
+        "syntax.function": "#185A8A",
+        "syntax.string": "#3F713A",
+        "syntax.number": "#9B4B12",
+        "syntax.type": "#7A5000",
+        "syntax.operator": "#176C68"
       }
     }
   ]

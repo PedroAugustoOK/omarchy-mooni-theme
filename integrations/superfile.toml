@@ -21,9 +21,9 @@ footer_fg = '#302713'
 modal_fg = '#302713'
 
 cursor = '#302713'
-correct = '#5B7B4C'
+correct = '#3F713A'
 error = '#AF5860'
-hint = '#487D7A'
+hint = '#176C68'
 cancel = '#AF5860'
 gradient_color = ['#F7E5AB', '#8A5A00']
 

@@ -6,11 +6,11 @@
 
 [delta "mooni"]
     syntax-theme = ansi
-    plus-style = syntax "#5B7B4C"
+    plus-style = syntax "#3F713A"
     minus-style = syntax "#AF5860"
     zero-style = syntax "#665A3E"
     file-style = "#8A5A00" bold
-    hunk-header-style = "#487D7A" italic
+    hunk-header-style = "#176C68" italic
     line-numbers = true
     line-numbers-minus-style = "#AF5860"
-    line-numbers-plus-style = "#5B7B4C"
+    line-numbers-plus-style = "#3F713A"

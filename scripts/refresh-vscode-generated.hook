@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Optional Omarchy hook for generated color themes.
+# VS Code caches the active theme label, so refresh it after a theme switch.
+
+refresh_settings() {
+  local settings="$1"
+  [[ -f $settings ]] || return 0
+  grep -q '"workbench.colorTheme"[[:space:]]*:[[:space:]]*"Omarchy"' "$settings" || return 0
+
+  local temporary_theme="Default Light+"
+  if [[ $(jq -r '.type // "light"' "$HOME/.local/state/omarchy/current/theme/vscode-theme.json" 2>/dev/null) == "dark" ]]; then
+    temporary_theme="Default Dark Modern"
+  fi
+
+  sed -i -E "s/(\"workbench\\.colorTheme\"[[:space:]]*:[[:space:]]*\")[^\"]*(\")/\\1${temporary_theme}\\2/" "$settings"
+  sleep 0.15
+  sed -i -E 's/("workbench\.colorTheme"[[:space:]]*:[[:space:]]*")[^"]*(")/\1Omarchy\2/' "$settings"
+}
+
+refresh_settings "$HOME/.config/Code/User/settings.json"
+refresh_settings "$HOME/.config/VSCodium/User/settings.json"
+refresh_settings "$HOME/.config/Cursor/User/settings.json"

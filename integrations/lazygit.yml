@@ -8,7 +8,7 @@ gui:
     inactiveBorderColor:
       - '#665A3E'
     searchingActiveBorderColor:
-      - '#487D7A'
+      - '#176C68'
       - bold
     optionsTextColor:
       - '#8A5A00'

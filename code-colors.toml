@@ -2,21 +2,20 @@
 # Values refer to keys in colors.toml, keeping every Omarchy theme consistent.
 
 [syntax]
-comment = "muted"
-keyword = "accent"
-function = "blue"
-type = "yellow"
-string = "green"
-number = "orange"
-constant = "bright_yellow"
-property = "cyan"
-operator = "cyan"
-macro = "cyan"
-decorator = "blue"
+comment = "code_comment"
+keyword = "code_keyword"
+function = "code_function"
+type = "code_type"
+string = "code_string"
+number = "code_number"
+constant = "code_constant"
+property = "code_property"
+operator = "code_operator"
+macro = "code_operator"
+decorator = "code_function"
 
 [diagnostics]
-error = "red"
-warning = "yellow"
-info = "blue"
-hint = "cyan"
-
+error = "code_error"
+warning = "code_warning"
+info = "code_info"
+hint = "code_hint"
