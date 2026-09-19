@@ -66,6 +66,10 @@ python3 scripts/validate-theme.py
 The validator checks the palette, contrast, shell coverage, previews,
 wallpapers, and synchronization of generated integrations.
 
+Mooni and Mooni Dark normalize their Plymouth symbols to a shared 800×400
+transparent canvas and an intermediate 344×234 visual box, keeping the symbol
+and password field aligned between variants.
+
 ## License
 
 [MIT](LICENSE).

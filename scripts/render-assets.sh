@@ -14,16 +14,21 @@ wordmark_h=540
 command -v magick >/dev/null
 command -v rsvg-convert >/dev/null
 test -f /usr/share/omarchy/logo.svg
-test -f unlock.png
+test -f assets/unlock-source.png
 
 work_dir=$(mktemp -d)
 trap 'rm -rf "$work_dir"' EXIT HUP INT TERM
+
+# Normalize both Mooni variants to the midpoint between their original visible
+# bounds. A shared 800x400 canvas also keeps Plymouth's password field aligned.
+magick assets/unlock-source.png -trim +repage -resize '344x234' \
+  -gravity center -background none -extent 800x400 -strip unlock.png
 
 rsvg-convert -w "$wordmark_w" -h "$wordmark_h" /usr/share/omarchy/logo.svg -o "$work_dir/wordmark.png"
 magick "$work_dir/wordmark.png" -channel RGB +level-colors "$accent","$accent" "$work_dir/wordmark.png"
 magick -size "${canvas_w}x${canvas_h}" "xc:$background" \
   "$work_dir/wordmark.png" -gravity center -composite \
-  -depth 8 backgrounds/04-omarchy-wordmark.png
+  -depth 8 -strip backgrounds/04-omarchy-wordmark.png
 
 for asset in bullet.png entry.png lock.png; do
   cp "/usr/share/omarchy/default/plymouth/$asset" "$work_dir/$asset"
@@ -54,4 +59,4 @@ magick -size 1920x1080 "xc:$background" \
   unlock.png -geometry "+${logo_x}+${logo_y}" -composite \
   "$work_dir/entry.png" -geometry "+${entry_x}+${entry_y}" -composite \
   \( "$work_dir/lock.png" -resize "${lock_w}x${lock_h}" \) -geometry "+${lock_x}+${lock_y}" -composite \
-  "$@" -depth 8 preview-unlock.png
+  "$@" -depth 8 -strip preview-unlock.png

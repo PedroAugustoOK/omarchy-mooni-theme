@@ -43,7 +43,9 @@ ficam isolados em `integrations/` e são gerados a partir de `colors.toml`.
 ![Prévia do desbloqueio de disco Mooni](preview-unlock.png)
 
 `preview-unlock.png` é renderizado com o símbolo `unlock.png`, as cores do tema
-e a geometria oficial do Plymouth usada pelo Omarchy.
+e a geometria oficial do Plymouth usada pelo Omarchy. Mooni e Mooni Dark usam
+a mesma tela transparente de 800×400 e uma caixa visual intermediária de
+344×234 para manter símbolo e campo de senha alinhados.
 
 ## Wallpapers
 
