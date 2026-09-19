@@ -1,0 +1,70 @@
+# Omarchy Mooni
+
+Tema claro para Omarchy v4, construído com amarelo-mel, superfícies de marfim
+e texto em cacau profundo. A versão escura, Mooni Dark, será sua variante
+noturna.
+
+[English version](README.en.md)
+
+![Prévia do desktop Mooni](preview.png)
+
+## Instalação
+
+~~~bash
+omarchy theme install https://github.com/PedroAugustoOK/omarchy-mooni-theme
+omarchy theme set mooni
+~~~
+
+Para trocar o wallpaper:
+
+~~~bash
+omarchy theme bg next
+~~~
+
+## Inclui
+
+- Paleta em `colors.toml` para Omarchy, terminal, editores e aplicativos
+  suportados pelo sistema.
+- `shell.toml` para barra, menus, notificações, polkit, lockscreen e seletor
+  de wallpapers.
+- Ícones Yaru Yellow.
+- Tema do btop.
+- Quatro wallpapers em 3840×2160.
+- Capturas reais do desktop e da tela de desbloqueio.
+- Integrações opcionais para bat, Cava, git-delta, Fastfetch, fzf, Lazygit,
+  Steam, Superfile, Vencord, Yazi e Zed.
+
+As integrações adicionais e suas instruções estão em
+[INTEGRATIONS.md](INTEGRATIONS.md). O núcleo do tema fica na raiz; os extras
+ficam isolados em `integrations/` e são gerados a partir de `colors.toml`.
+
+## Tela de bloqueio
+
+![Prévia da tela de bloqueio Mooni](preview-unlock.png)
+
+O campo de senha segue o layout padrão do Omarchy.
+
+## Wallpapers
+
+| Arquivo | Cena |
+| --- | --- |
+| `01-mooni-feast.png` | Jantar em tons de amarelo | 
+| `02-mooni-pumpkin.png` | Paisagem com abóboras | 
+| `03-mooni-garden.png` | Jardim aberto e ensolarado | 
+| `04-omarchy-wordmark.png` | Wordmark oficial em fundo dourado | 
+
+As notas sobre os assets estão em [ATTRIBUTIONS.md](ATTRIBUTIONS.md).
+
+## Desenvolvimento
+
+~~~bash
+python3 scripts/generate-integrations.py
+python3 scripts/validate-theme.py
+~~~
+
+O teste verifica a paleta, contraste, shell, previews, wallpapers e se as
+integrações geradas estão sincronizadas com a paleta.
+
+## Licença
+
+[MIT](LICENSE).

@@ -1,0 +1,34 @@
+# Omarchy Mooni
+# Warm light surfaces, honey-yellow emphasis, and deep cocoa text.
+
+mode = "light"
+
+accent = "#8A5A00"
+selection = "#F7E5AB"
+muted = "#665A3E"
+
+background = "#FFF9E8"
+dark_background = "#F6EAC8"
+darker_background = "#E9D9AB"
+lighter_background = "#FFFCF3"
+
+foreground = "#302713"
+dark_foreground = "#665A3E"
+light_foreground = "#7D6D48"
+bright_foreground = "#1E180B"
+
+red = "#AF5860"
+yellow = "#A46B00"
+orange = "#B56822"
+green = "#5B7B4C"
+cyan = "#487D7A"
+blue = "#466F91"
+magenta = "#80608D"
+brown = "#79553A"
+
+bright_red = "#C86F76"
+bright_yellow = "#C58B18"
+bright_green = "#71915F"
+bright_cyan = "#5D9692"
+bright_blue = "#5B86A9"
+bright_magenta = "#9975A7"
