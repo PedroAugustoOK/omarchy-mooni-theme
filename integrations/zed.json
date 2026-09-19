@@ -43,11 +43,11 @@
         "terminal.ansi.bright_white": "#1E180B",
         "syntax.comment": "#665A3E",
         "syntax.keyword": "#8A5A00",
-        "syntax.function": "#487D7A",
-        "syntax.string": "#B56822",
-        "syntax.number": "#80608D",
-        "syntax.type": "#5B7B4C",
-        "syntax.operator": "#8A5A00"
+        "syntax.function": "#466F91",
+        "syntax.string": "#5B7B4C",
+        "syntax.number": "#B56822",
+        "syntax.type": "#A46B00",
+        "syntax.operator": "#487D7A"
       }
     }
   ]

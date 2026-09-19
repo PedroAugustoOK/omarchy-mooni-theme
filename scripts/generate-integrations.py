@@ -316,11 +316,11 @@ separator_style = { fg = "{{ muted }}" }
         "terminal.ansi.bright_white": "{{ bright_foreground }}",
         "syntax.comment": "{{ muted }}",
         "syntax.keyword": "{{ accent }}",
-        "syntax.function": "{{ cyan }}",
-        "syntax.string": "{{ orange }}",
-        "syntax.number": "{{ magenta }}",
-        "syntax.type": "{{ green }}",
-        "syntax.operator": "{{ accent }}"
+        "syntax.function": "{{ blue }}",
+        "syntax.string": "{{ green }}",
+        "syntax.number": "{{ orange }}",
+        "syntax.type": "{{ yellow }}",
+        "syntax.operator": "{{ cyan }}"
       }
     }
   ]

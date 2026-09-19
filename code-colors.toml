@@ -1,0 +1,22 @@
+# Shared semantic contract for source code across editors.
+# Values refer to keys in colors.toml, keeping every Omarchy theme consistent.
+
+[syntax]
+comment = "muted"
+keyword = "accent"
+function = "blue"
+type = "yellow"
+string = "green"
+number = "orange"
+constant = "bright_yellow"
+property = "cyan"
+operator = "cyan"
+macro = "cyan"
+decorator = "blue"
+
+[diagnostics]
+error = "red"
+warning = "yellow"
+info = "blue"
+hint = "cyan"
+

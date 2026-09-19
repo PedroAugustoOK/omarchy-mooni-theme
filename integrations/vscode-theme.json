@@ -1,0 +1,38 @@
+{
+  "$schema": "vscode://schemas/color-theme",
+  "name": "Omarchy Mooni",
+  "type": "light",
+  "semanticHighlighting": true,
+  "semanticTokenColors": {
+    "parameter": "#487D7A",
+    "property": "#487D7A",
+    "variable": "#302713",
+    "function": "#466F91",
+    "method": "#466F91",
+    "class": "#A46B00",
+    "interface": "#A46B00",
+    "enum": "#A46B00",
+    "type": "#A46B00",
+    "typeParameter": "#A46B00",
+    "string": "#5B7B4C",
+    "number": "#B56822",
+    "boolean": "#B56822",
+    "operator": "#487D7A",
+    "keyword": "#8A5A00",
+    "macro": "#487D7A",
+    "decorator": "#466F91",
+    "comment": {
+      "foreground": "#665A3E",
+      "fontStyle": "italic"
+    }
+  },
+  "colors": {
+    "editor.foreground": "#302713",
+    "editor.background": "#FFF9E8",
+    "editor.selectionBackground": "#F7E5AB80",
+    "editorError.foreground": "#AF5860",
+    "editorWarning.foreground": "#A46B00",
+    "editorInfo.foreground": "#466F91",
+    "focusBorder": "#8A5A00"
+  }
+}

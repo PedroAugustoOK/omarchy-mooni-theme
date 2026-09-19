@@ -1,0 +1,70 @@
+# Generated from code-colors.toml; do not edit directly.
+"keyword" = "accent"
+"keyword.control" = { fg = "accent", modifiers = ["italic"] }
+"function" = "blue"
+"function.builtin" = "blue"
+"function.macro" = "cyan"
+"type" = "yellow"
+"type.builtin" = "yellow"
+"constructor" = "blue"
+"constant" = "bright_yellow"
+"constant.builtin" = "bright_yellow"
+"constant.numeric" = "orange"
+"string" = "green"
+"string.regexp" = "green"
+"string.special" = "cyan"
+"comment" = { fg = "muted", modifiers = ["italic"] }
+"variable" = "foreground"
+"variable.parameter" = { fg = "foreground", modifiers = ["italic"] }
+"variable.other.member" = "cyan"
+"operator" = "cyan"
+"tag" = "blue"
+"namespace" = "yellow"
+"attribute" = "yellow"
+"punctuation" = "muted"
+
+"markup.heading" = "accent"
+"markup.link.url" = { fg = "blue", modifiers = ["underlined"] }
+"markup.link.text" = "accent"
+"markup.raw" = "green"
+"markup.quote" = "muted"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "orange"
+
+"ui.background" = { }
+"ui.text" = "foreground"
+"ui.text.inactive" = "muted"
+"ui.linenr" = { fg = "muted" }
+"ui.selection" = { bg = "selection_background", fg = "selection_foreground" }
+"ui.cursor" = { fg = "background", bg = "cursor" }
+"ui.statusline" = { fg = "background", bg = "foreground" }
+"ui.statusline.normal" = { fg = "background", bg = "blue", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "background", bg = "green", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "background", bg = "accent", modifiers = ["bold"] }
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info" = { underline = { color = "blue", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "cyan", style = "curl" } }
+error = "red"
+warning = "yellow"
+info = "blue"
+hint = "cyan"
+
+[palette]
+background = "#FFF9E8"
+foreground = "#302713"
+lighter_background = "#FFFCF3"
+cursor = "#1E180B"
+selection_background = "#F7E5AB"
+selection_foreground = "#302713"
+accent = "#8A5A00"
+muted = "#665A3E"
+red = "#AF5860"
+yellow = "#A46B00"
+orange = "#B56822"
+green = "#5B7B4C"
+cyan = "#487D7A"
+blue = "#466F91"
+bright_yellow = "#C58B18"

@@ -35,6 +35,8 @@ INTEGRATIONS = {
     "superfile.toml",
     "vencord.theme.css",
     "yazi-theme.toml",
+    "helix.toml",
+    "vscode-theme.json",
     "zed.json",
 }
 SHELL_SECTIONS = {
@@ -70,6 +72,9 @@ def main():
     assert not missing, f"missing files: {', '.join(missing)}"
 
     palette = tomllib.loads((ROOT / "colors.toml").read_text())
+    contract = tomllib.loads((ROOT / "code-colors.toml").read_text())
+    assert set(contract["syntax"]) >= {"comment", "keyword", "function", "type", "string", "number", "operator"}
+    assert set(contract["diagnostics"]) == {"error", "warning", "info", "hint"}
     assert palette.get("mode") == MODE, f"mode must be {MODE!r}"
     colors = {key: value for key, value in palette.items() if key != "mode"}
     assert len(colors) >= 20
@@ -101,6 +106,8 @@ def main():
 
     json.loads((integration_dir / "fastfetch.jsonc").read_text())
     json.loads((integration_dir / "zed.json").read_text())
+    json.loads((integration_dir / "vscode-theme.json").read_text())
+    tomllib.loads((integration_dir / "helix.toml").read_text())
     tomllib.loads((integration_dir / "superfile.toml").read_text())
     tomllib.loads((integration_dir / "yazi-theme.toml").read_text())
     generated = subprocess.run(

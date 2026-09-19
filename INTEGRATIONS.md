@@ -33,6 +33,15 @@ Para verificar se o repositório está sincronizado sem alterar arquivos, use
 | Vencord/Discord | `vencord.theme.css` | Copie para a pasta de temas do Vencord e habilite-o em Settings → Themes. |
 | Yazi | `yazi-theme.toml` | Mescle em `~/.config/yazi/theme.toml`; não altera atalhos nem layout. |
 | Zed | `zed.json` | Copie para `~/.config/zed/themes/mooni.json` e selecione “Omarchy Mooni”. |
+| Helix | `helix.toml` | Copie para `~/.config/helix/themes/mooni.toml` e selecione `theme = "mooni"`. |
+| VS Code | `vscode-theme.json` | Instale como um tema local ou use como base para uma extensão de tema. |
+
+## Cores semânticas de código
+
+`code-colors.toml` é o contrato compartilhado pelos temas Ankh, Ankh Dark e Mooni.
+Ele mantém keywords, funções, tipos, strings, números, comentários e diagnósticos
+com os mesmos papéis em todos os editores. Os arquivos de integração são gerados por
+`scripts/generate-code-theme.py`; não edite os arquivos gerados diretamente.
 
 Nenhum dos arquivos em `integrations/` é instalado automaticamente por
 `omarchy theme install`; isso evita que um tema altere configurações de apps
