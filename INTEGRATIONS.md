@@ -3,8 +3,8 @@
 O Omarchy já gera e reaplica, a cada troca de tema, configurações para
 Alacritty, Foot, Ghostty, Kitty, btop, Chromium/Chrome/Brave/Edge, Helix,
 Neovim, VS Code, VSCodium, Cursor, Obsidian, teclado e superfícies do próprio
-Omarchy. O Mooni usa essa rota oficial por meio de `colors.toml` e não duplica
-essas configurações.
+Omarchy. O Mooni usa essa rota oficial por meio de `colors.toml`, com overrides
+somente de cores na raiz para VS Code e Helix.
 
 Os complementos em `integrations/` atendem softwares que não são configurados
 automaticamente. Eles são deliberadamente opcionais: copie ou mescle apenas o
@@ -15,6 +15,7 @@ diretamente. Após mudar a paleta, execute:
 
 ~~~bash
 python3 scripts/generate-integrations.py
+python3 scripts/generate-code-theme.py
 ~~~
 
 Para verificar se o repositório está sincronizado sem alterar arquivos, use
@@ -43,8 +44,10 @@ Ele mantém keywords, funções, tipos, strings, números, comentários e diagn�
 com os mesmos papéis em todos os editores. Os arquivos de integração são gerados por
 `scripts/generate-code-theme.py`; não edite os arquivos gerados diretamente.
 
-Para manter o tema gerado do VS Code sincronizado sem reiniciar o editor nem
-alternar temporariamente para outro tema, instale o hook opcional:
+O hook abaixo é um workaround opcional já existente para o cache do VS Code,
+não uma garantia de atualização visual em tempo real. Ele altera a extensão
+local gerada e usa um campo interno (`_watch`); não é necessário para instalar
+as cores e não é instalado ou modificado por esta revisão:
 
 ~~~bash
 omarchy hook install theme-set scripts/refresh-vscode-generated.hook

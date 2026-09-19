@@ -30,7 +30,7 @@ omarchy theme bg next
 - Ícones Yaru Yellow.
 - Tema do btop.
 - Quatro wallpapers em 3840×2160.
-- Capturas reais do desktop e da tela de desbloqueio.
+- Prévias ilustrativas de cores do desktop e do desbloqueio.
 - Integrações opcionais para bat, Cava, git-delta, Fastfetch, fzf, Lazygit,
   Steam, Superfile, Vencord, Yazi e Zed.
 
@@ -42,7 +42,8 @@ ficam isolados em `integrations/` e são gerados a partir de `colors.toml`.
 
 ![Prévia da tela de bloqueio Mooni](preview-unlock.png)
 
-O campo de senha segue o layout padrão do Omarchy.
+A imagem de desbloqueio é ilustrativa; não é uma captura da sessão atual.
+O desbloqueio do disco (Plymouth) e o bloqueio da sessão são interfaces distintas.
 
 ## Wallpapers
 
@@ -68,3 +69,26 @@ integrações geradas estão sincronizadas com a paleta.
 ## Licença
 
 [MIT](LICENSE).
+
+## Arquivos gerados e validação
+
+A identidade do tema vem de `theme.toml`, independentemente do nome da pasta
+do clone. `colors.toml` define a paleta; `code-colors.toml` define seus papéis.
+
+`vscode-theme.json` e `helix.toml` na raiz são arquivos somente de cores,
+aplicados pela rota padrão do Omarchy. Os equivalentes em `integrations/`
+servem para uso independente; Zed continua opcional. Neovim e terminais seguem
+os templates do sistema: a cobertura de sintaxe depende também da linguagem,
+do parser e do servidor de linguagem, não apenas da paleta.
+
+~~~bash
+python3 scripts/generate-code-theme.py
+python3 scripts/generate-code-theme.py --check
+python3 scripts/validate-theme.py
+~~~
+
+Os testes conferem saídas desatualizadas, semântica dos editores, contraste de
+texto e seleção, além dos arquivos do tema. Não substituem inspeção visual dos
+aplicativos abertos. Esta revisão não instala hooks nem recarrega o VS Code.
+
+Veja [REVIEW.md](REVIEW.md) para a comparação com o Omarchy oficial e limites.

@@ -27,7 +27,7 @@ omarchy theme bg next
 - Complete `shell.toml` coverage for the bar, menus, notifications, polkit,
   lock screen, and wallpaper picker.
 - Yaru Yellow icons and a btop theme.
-- Four 3840×2160 wallpapers plus real desktop and unlock previews.
+- Four 3840×2160 wallpapers plus illustrative desktop and unlock previews.
 - Optional, palette-generated integrations for bat, Cava, git-delta,
   Fastfetch, fzf/Fish, Lazygit, Steam, Superfile, Vencord, Yazi, and Zed.
 

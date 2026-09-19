@@ -9,11 +9,9 @@ set -l color06 '#176C68'
 set -l color07 '#7D6D48'
 set -l color08 '#665A3E'
 
-set -l non_color_opts
-for arg in (string split ' ' -- $FZF_DEFAULT_OPTS)
-    if not string match -q -- '--color*' $arg
-        set -a non_color_opts $arg
-    end
+# Preserve quoted user options; replace only the suffix added by this integration.
+if set -q __mooni_fzf_suffix
+    set -gx FZF_DEFAULT_OPTS (string replace -- "$__mooni_fzf_suffix" '' "$FZF_DEFAULT_OPTS")
 end
-
-set -Ux FZF_DEFAULT_OPTS "$non_color_opts --color=bg+:$color00,bg:$color00,spinner:$color06,hl:$color04 --color=fg:$color07,header:$color04,info:$color02,pointer:$color06 --color=marker:$color06,fg+:$color07,prompt:$color02,hl+:$color04"
+set -g __mooni_fzf_suffix " --color=bg+:#F7E5AB,bg:$color00,spinner:$color06,hl:$color04 --color=fg:#302713,header:$color04,info:$color02,pointer:$color06 --color=marker:$color06,fg+:#302713,prompt:$color02,hl+:$color04"
+set -gx FZF_DEFAULT_OPTS "$FZF_DEFAULT_OPTS$__mooni_fzf_suffix"

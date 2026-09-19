@@ -1,5 +1,5 @@
 {
-  "$schema": "https://zed.dev/schema/themes/v0.1.0.json",
+  "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
   "name": "Omarchy Mooni",
   "author": "Pedro Augusto",
   "themes": [
@@ -12,7 +12,6 @@
         "editor.foreground": "#302713",
         "text": "#302713",
         "text.muted": "#665A3E",
-        "text.placeholder": "#665A3E",
         "border": "#E9D9AB",
         "panel.background": "#F6EAC8",
         "title_bar.background": "#FFF9E8",
@@ -22,9 +21,47 @@
         "element.selected": "#F7E5AB",
         "editor.active_line.background": "#F6EAC8",
         "editor.gutter.background": "#FFF9E8",
-        "scrollbar.thumb.background": "#665A3E",
         "terminal.background": "#FFF9E8",
         "terminal.foreground": "#302713",
+        "syntax": {
+          "comment": {
+            "color": "#756448",
+            "font_style": "italic"
+          },
+          "keyword": {
+            "color": "#8A5A00"
+          },
+          "function": {
+            "color": "#185A8A"
+          },
+          "type": {
+            "color": "#7A5000"
+          },
+          "string": {
+            "color": "#3F713A"
+          },
+          "number": {
+            "color": "#9B4B12"
+          },
+          "constant": {
+            "color": "#8E4B0A"
+          },
+          "property": {
+            "color": "#1F667D"
+          },
+          "operator": {
+            "color": "#176C68"
+          },
+          "punctuation": {
+            "color": "#816E4D"
+          },
+          "macro": {
+            "color": "#176C68"
+          },
+          "decorator": {
+            "color": "#185A8A"
+          }
+        },
         "terminal.ansi.black": "#FFF9E8",
         "terminal.ansi.red": "#AF5860",
         "terminal.ansi.green": "#3F713A",
@@ -41,13 +78,10 @@
         "terminal.ansi.bright_magenta": "#9975A7",
         "terminal.ansi.bright_cyan": "#5D9692",
         "terminal.ansi.bright_white": "#1E180B",
-        "syntax.comment": "#665A3E",
-        "syntax.keyword": "#8A5A00",
-        "syntax.function": "#185A8A",
-        "syntax.string": "#3F713A",
-        "syntax.number": "#9B4B12",
-        "syntax.type": "#7A5000",
-        "syntax.operator": "#176C68"
+        "error": "#A3434E",
+        "warning": "#8A5A00",
+        "info": "#185A8A",
+        "hint": "#176C68"
       }
     }
   ]

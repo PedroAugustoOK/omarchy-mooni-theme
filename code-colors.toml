@@ -11,6 +11,7 @@ number = "code_number"
 constant = "code_constant"
 property = "code_property"
 operator = "code_operator"
+punctuation = "code_punctuation"
 macro = "code_operator"
 decorator = "code_function"
 

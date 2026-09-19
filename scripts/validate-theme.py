@@ -68,6 +68,10 @@ def png_size(path):
 
 
 def main():
+    import subprocess
+    import sys
+    subprocess.run([sys.executable, ROOT / "scripts/validate-editors.py"], check=True)
+    subprocess.run([sys.executable, ROOT / "scripts/test-generators.py"], check=True)
     missing = sorted(name for name in REQUIRED if not (ROOT / name).is_file())
     assert not missing, f"missing files: {', '.join(missing)}"
 
